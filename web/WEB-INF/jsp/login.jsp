@@ -30,7 +30,9 @@
             createCode();
             //测试提交，对接程序删除即可
             $(".submit_btn").click(function(){
-                location.href="index.html";
+                var uname =document.getElementById('user_id').value;
+                var pwd =document.getElementById('user_pwd').value;
+                location.href="user/loginUser/"+uname+","+pwd;
             });
         });
     </script>
@@ -41,12 +43,12 @@
         <strong>站点后台管理系统</strong>
         <em>Management System</em>
     </dt>
-    <from action="user/loginUser">
+    <from action="user/loginUser" method="post">
         <dd class="user_icon">
-            <input type="text" placeholder="账号" class="login_txtbx" name="uname"/>
+            <input type="text" placeholder="账号" value="lqd" class="login_txtbx" name="uname" id="user_id"/>
         </dd>
         <dd class="pwd_icon">
-            <input type="password" placeholder="密码" class="login_txtbx" name="pwd"/>
+            <input type="password" value="123456" class="login_txtbx" name="pwd" id="user_pwd"/>
         </dd>
         <dd class="val_icon">
             <div class="checkcode">
@@ -56,7 +58,7 @@
             <input type="button" value="验证码核验" class="ver_btn" onClick="validate();">
         </dd>
         <dd>
-            <input type="button" value="立即登录" class="submit_btn"/>
+            <input type="submit" value="立即登录" class="submit_btn"/>
         </dd>
     </from>
     <dd>

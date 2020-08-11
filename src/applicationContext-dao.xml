@@ -6,6 +6,7 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 加载properties文件 -->
     <context:property-placeholder location="classpath:db.properties"/>  <!--db.properties在src目录下-->
+
     <!-- 配置数据源 dataSource,spring自带的连接池 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="url" value="${jdbc.url}"></property>
