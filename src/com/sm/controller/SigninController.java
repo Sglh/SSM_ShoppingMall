@@ -24,7 +24,7 @@ public class SigninController {
         int uid=user.getUid();
         Date dtdate =new Date(System.currentTimeMillis());
         Signin signin = signinServie.signAll(uid, dtdate);
-        //System.out.println(signin);
+        System.out.println(signin);
         if(signin==null){
             int a=signinServie.signAdd(uid,dtdate);
             if(a==1){
