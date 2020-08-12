@@ -6,4 +6,19 @@
     <select id="loginUser" resultType="com.sm.pojo.U_user">
         select * from u_user where uname = #{param1} and pwd = #{param2}
     </select>
+
+
+    <!--订单-->
+    <resultMap id="m" type="com.sm.pojo.Orders">
+        <!--查询商品-->
+        <id property="coid" column="coid"></id>
+        <association property="commodity" select="com.sm.mapper.CommodityMapper.allCommodity" javaType="com.sm.pojo.Commodity" column="coid"></association>
+
+        <!--查询地址-->
+
+    </resultMap>
+    
+    <select id="allOrder" resultMap="m">
+        select * from orders where uid = #{param1}
+    </select>
 </mapper>

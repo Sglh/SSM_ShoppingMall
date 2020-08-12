@@ -1,5 +1,6 @@
 package com.sm.controller;
 
+import com.sm.pojo.Orders;
 import com.sm.pojo.U_user;
 import com.sm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -33,6 +35,17 @@ public class UserController {
         }else {
             return "login";
         }
+    }
+
+    @RequestMapping("/allOrder")
+    public String allOrder(HttpSession session) {
+        System.out.println("进入了allOrder");
+        U_user u_user = (U_user)session.getAttribute("u_user");
+        int uid = u_user.getUid();
+        List<Orders> orders = userService.allOrder(uid);
+        System.out.println("orders的值"+orders);
+        session.setAttribute("orders",orders);
+        return "order";
     }
 
 }

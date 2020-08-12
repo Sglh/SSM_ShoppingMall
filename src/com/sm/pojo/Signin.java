@@ -2,6 +2,10 @@ package com.sm.pojo;
 
 import java.sql.Date;
 
+/*
+* 签到表
+* */
+
 public class Signin {
     // sid INT(5) AUTO_INCREMENT PRIMARY KEY,
     //       uid INT(5) NOT NULL,

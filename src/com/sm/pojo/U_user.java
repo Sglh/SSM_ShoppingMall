@@ -3,6 +3,8 @@ package com.sm.pojo;
 import java.io.Serializable;
 
 
+/*用户表*/
+
 public class U_user implements Serializable {
     private int uid;
     private String uname;
@@ -11,6 +13,8 @@ public class U_user implements Serializable {
     private double balance; //余额
     private double ubalance;  //累计消费
     private String phone;
+
+
 
     public U_user() {
     }

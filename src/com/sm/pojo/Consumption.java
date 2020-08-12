@@ -3,6 +3,10 @@ package com.sm.pojo;
 import java.io.Serializable;
 import java.util.List;
 
+/*
+* 消费明细表
+* */
+
 public class Consumption implements Serializable {
 
     //conid INT(5) AUTO_INCREMENT PRIMARY KEY,

@@ -65,7 +65,7 @@
             </a>
         </li>
         <li>
-            <a href="order.html">
+            <a href="user/allOrder">
                 <p class="ico ico-order"></p>
                 <p>我的订单</p>
             </a>
@@ -96,7 +96,7 @@
         </li>
     </ul>
 </div>
-<!--底部导航-->
+<!--底部导航--
 <nav class="ng-scope">
     <ul class="nav">
         <li>
