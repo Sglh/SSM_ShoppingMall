@@ -15,6 +15,10 @@
         <association property="commodity" select="com.sm.mapper.CommodityMapper.allCommodity" javaType="com.sm.pojo.Commodity" column="coid"></association>
 
         <!--查询地址-->
+        <association property="address" select="com.sm.mapper.AddressMapper.selAddress" javaType="com.sm.pojo.Address" column="aid"></association>
+
+        <!--查询商品图片-->
+        <association property="picture" select="com.sm.mapper.ImgMapper.imgMapper" javaType="com.sm.pojo.Picture" column="coid"></association>
 
     </resultMap>
     

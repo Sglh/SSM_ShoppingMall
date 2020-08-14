@@ -2,7 +2,6 @@ package com.sm.mapper;
 
 import com.sm.pojo.Orders;
 import com.sm.pojo.U_user;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 

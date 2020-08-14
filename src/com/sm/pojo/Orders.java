@@ -26,11 +26,15 @@ public class Orders implements Serializable {
     private Consumption consumption;  //持有消费明细表
     private Commodity commodity;//持有商品表
 
+    private Picture picture;  //持有图片表
+
+    private Address address;  //持有地址表
+
 
     public Orders() {
     }
 
-    public Orders(int oid, int uid, int coid, int number, int state, Date odata, String remarks, Consumption consumption, Commodity commodity) {
+    public Orders(int oid, int uid, int coid, int number, int state, Date odata, String remarks, Consumption consumption, Commodity commodity, Picture picture, Address address) {
         this.oid = oid;
         this.uid = uid;
         this.coid = coid;
@@ -40,6 +44,8 @@ public class Orders implements Serializable {
         this.remarks = remarks;
         this.consumption = consumption;
         this.commodity = commodity;
+        this.picture = picture;
+        this.address = address;
     }
 
     public int getOid() {
@@ -114,6 +120,22 @@ public class Orders implements Serializable {
         this.commodity = commodity;
     }
 
+    public Picture getPicture() {
+        return picture;
+    }
+
+    public void setPicture(Picture picture) {
+        this.picture = picture;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Orders{" +
@@ -126,6 +148,8 @@ public class Orders implements Serializable {
                 ", remarks='" + remarks + '\'' +
                 ", consumption=" + consumption +
                 ", commodity=" + commodity +
+                ", picture=" + picture +
+                ", address=" + address +
                 '}';
     }
 }

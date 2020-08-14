@@ -1,7 +1,6 @@
 package com.sm.service.impl;
 
 import com.sm.mapper.ConsumMapper;
-import com.sm.pojo.Consumption;
 import com.sm.pojo.Orders;
 import com.sm.service.ConsumServie;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,6 +3,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Date" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -43,14 +44,14 @@
         <ul class="lists ng-scope">
             <c:forEach items="${orders}" var="order">
             <li>
-                <p>${order.odata} <span class="status">已取消</span></p>
+                <p><fmt:formatDate value="${order.odata}" pattern="yyyy-MM-dd a HH:mm:ss"/> <span class="status">已取消</span></p>
                 <p>订单编号：${order.coid}</p>
                 <p>订单备注：${order.remarks}</p>
-                <p>收货地址：暂时挂着</p>
+                <p>收货地址：${order.address.addresss}</p>
                 <ul class="pdtlist">
                     <li>
                         <div class="l">
-                            <img src="img/lists/up1.jpg" class="img-responsive" alt="..." />
+                            <img src="img/cate/${order.picture.filename}.${order.picture.filetype}" class="img-responsive" alt="..." />
                         </div>
                         <div class="r">
                             <p class="t">${order.commodity.coname}</p>

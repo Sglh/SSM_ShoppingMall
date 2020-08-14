@@ -44,7 +44,7 @@ public class UserController {
         U_user u_user = (U_user)session.getAttribute("u_user");
         int uid = u_user.getUid();
         List<Orders> orders = userService.allOrder(uid);
-        System.out.println("orders的值"+orders);
+        System.out.println("orders的值"+orders.toString());
         session.setAttribute("orders",orders);
         return "order";
     }

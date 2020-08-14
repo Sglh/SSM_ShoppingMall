@@ -1,12 +1,13 @@
 package com.sm.pojo;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 /*
 * 签到表
 * */
 
-public class Signin {
+public class Signin implements Serializable {
     // sid INT(5) AUTO_INCREMENT PRIMARY KEY,
     //       uid INT(5) NOT NULL,
     //       sdata DATE NOT NULL,
