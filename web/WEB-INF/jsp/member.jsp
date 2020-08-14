@@ -38,6 +38,13 @@
                 }
             )
         }
+        $(function(){
+            window.onpageshow = function (event) {
+                if (event.persisted) {
+                    window.location.reload();
+                }
+            }
+        });
     </script>
 </head>
 <body>
@@ -50,10 +57,10 @@
     <div style="clear:both;background:#E0E0E0;height:5px;" class="ng-scope"></div>
     <ul class="headerlist ng-scope">
         <li class="ng-binding">
-            消费积分余额 ￥100.00
+            消费积分余额 ￥${u_user.balance}
         </li>
         <li class="ng-binding">
-            累计消费 ￥0.00
+            累计消费 ￥${u_user.ubalance}
         </li>
     </ul>
     <div style="clear:both;background:#E0E0E0;height:5px;" class="ng-scope"></div>
@@ -71,9 +78,9 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="cq.html">
                 <p class="ico ico-recommend"></p>
-                <p>推荐有礼</p>
+                <p>充值有礼</p>
             </a>
         </li>
         <li>
@@ -83,7 +90,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="jieshao.html">
                 <p class="ico ico-about"></p>
                 <p>关于我们</p>
             </a>
@@ -96,7 +103,6 @@
         </li>
     </ul>
 </div>
-<!--底部导航--
 <nav class="ng-scope">
     <ul class="nav">
         <li>
@@ -126,6 +132,5 @@
         </li>
     </ul>
 </nav>
-<!--/底部导航-->
 </body>
 </html>

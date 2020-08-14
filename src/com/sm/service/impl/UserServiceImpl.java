@@ -24,4 +24,10 @@ public class UserServiceImpl implements UserService {
     public List<Orders> allOrder(int uid) {
         return userMapper.allOrder(uid);
     }
+
+
+    @Override
+    public int BalanceAdd(int uid, double balance) {
+        return userMapper.BalanceAdd(uid,balance);
+    }
 }

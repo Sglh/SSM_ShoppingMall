@@ -10,4 +10,6 @@ import java.util.List;
 public interface UserService {
     public U_user loginUser(String uname,String pwd);
     public List<Orders> allOrder(int uid);
+
+    public int BalanceAdd(int uid,double balance);
 }

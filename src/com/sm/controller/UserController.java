@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -46,6 +47,27 @@ public class UserController {
         System.out.println("orders的值"+orders);
         session.setAttribute("orders",orders);
         return "order";
+    }
+
+    @RequestMapping("/BalanceAdd")
+    @ResponseBody
+    public String BalanceAdd(String balance,HttpSession session){
+        U_user u_user = (U_user)session.getAttribute("u_user");
+        System.out.println(balance);
+        String str=balance.substring(0,balance.length()-1);
+        //System.out.println(str);
+        double ble=Double.parseDouble(str);
+        System.out.println(ble);
+        int n=userService.BalanceAdd(u_user.getUid(),ble);
+        if(n==1){
+            double a=u_user.getBalance()+ble;
+            u_user.setBalance(a);
+            session.setAttribute("u_user",u_user);
+            return "1";
+        }else {
+            return "0";
+        }
+
     }
 
 }
