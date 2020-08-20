@@ -44,7 +44,7 @@
         <ul class="lists ng-scope">
             <c:forEach items="${orders}" var="order">
             <li>
-                <p><fmt:formatDate value="${order.odata}" pattern="yyyy-MM-dd a HH:mm:ss"/> <span class="status">已取消</span></p>
+                <p><fmt:formatDate value="${order.odata}" pattern="yyyy-MM-dd a HH:mm:ss"/> <span class="status">已支付</span></p>
                 <p>订单编号：${order.coid}</p>
                 <p>订单备注：${order.remarks}</p>
                 <p>收货地址：${order.address.addresss}</p>
@@ -61,8 +61,8 @@
                     </li>
                 </ul>
                 <div class="bottom">
-                    <p>总计：￥21.78 元  积分抵扣：￥0.00 元</p>
-                    <p class="money">实付：￥21.78元</p>
+                    <p>总计：￥${order.commodity.price * order.number}元&nbsp;&nbsp;积分抵扣：￥0.00 元</p>
+                    <p class="money">实付：￥${order.commodity.price*order.number}元</p>
                     <a href="javascript:;">删除记录</a>
                 </div>
             </li>
