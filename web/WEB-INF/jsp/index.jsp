@@ -97,7 +97,7 @@
 <nav class="ng-scope">
     <ul class="nav">
         <li>
-            <a href="shop.html">
+            <a href="shop/allCommodity">
                 <img src="img/foot01.png" alt="">
                 <p>超市</p>
             </a>

@@ -11,19 +11,33 @@ public class Commodity implements Serializable {
     private int cid;
     private String coname;
     private double price;
-    private Date newdate;  //消费时间
+    private Date newdata;  //消费时间
     private int coumber;  //数量
+
+    private Category category;  //持有商品类别表
+    private Picture picture;  //持有图片表
 
     public Commodity() {
     }
 
-    public Commodity(int coid, int cid, String coname, double price, Date newdate, int coumber) {
+    public Commodity(int coid, int cid, String coname, double price, Date newdata, int coumber) {
         this.coid = coid;
         this.cid = cid;
         this.coname = coname;
         this.price = price;
-        this.newdate = newdate;
+        this.newdata = newdata;
         this.coumber = coumber;
+    }
+
+    public Commodity(int coid, int cid, String coname, double price, Date newdata, int coumber, Category category, Picture picture) {
+        this.coid = coid;
+        this.cid = cid;
+        this.coname = coname;
+        this.price = price;
+        this.newdata = newdata;
+        this.coumber = coumber;
+        this.category = category;
+        this.picture = picture;
     }
 
     public int getCoid() {
@@ -59,11 +73,11 @@ public class Commodity implements Serializable {
     }
 
     public Date getNewdate() {
-        return newdate;
+        return newdata;
     }
 
     public void setNewdate(Date newdate) {
-        this.newdate = newdate;
+        this.newdata = newdate;
     }
 
     public int getCoumber() {
@@ -74,6 +88,22 @@ public class Commodity implements Serializable {
         this.coumber = coumber;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Picture getPicture() {
+        return picture;
+    }
+
+    public void setPicture(Picture picture) {
+        this.picture = picture;
+    }
+
     @Override
     public String toString() {
         return "Commodity{" +
@@ -81,8 +111,10 @@ public class Commodity implements Serializable {
                 ", cid=" + cid +
                 ", coname='" + coname + '\'' +
                 ", price=" + price +
-                ", newdate=" + newdate +
+                ", newdate=" + newdata +
                 ", coumber=" + coumber +
+                ", category=" + category +
+                ", picture=" + picture +
                 '}';
     }
 }

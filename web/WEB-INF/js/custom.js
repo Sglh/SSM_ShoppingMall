@@ -89,6 +89,7 @@ $(document).ready(function () {
         //点击加数量
         $(objLi).find(".num_r").click(function () {
             var number = parseInt($(objLi).find(".number").text()) + 1;
+
             $(objLi).find(".number").text(number);
 
             CountNumPrice();
@@ -158,16 +159,71 @@ function showselect(type) {
 function CountNumPrice() {
     var totalcartnumber = 0;//数量
     var totalmoney = 0;//价格
+    var uid = 0;  //用户id
+    var coid = 0;  //商品id
+    var number = 0;  //商品数量
     $(".lists .on").each(function (i, model) {
         var objLi = $(this);
-        var number = parseInt($(objLi).find(".number").text());
+        number = parseInt($(objLi).find(".number").text());
         var price = parseFloat($(objLi).attr("price"));
-        
+        // var coname = $(objLi).find(".t").text();
+        // var coname = $(objLi).find(".t").text();
+        uid = parseInt($(objLi).find(".uid").text());
+        coid = parseInt($(objLi).find(".coid").text());
+
         totalcartnumber = totalcartnumber + number;
         totalmoney = totalmoney + (number * price);
     });
     $("#totalcartnumber").text(totalcartnumber);
     $("#totalmoney").text(totalmoney.toFixed(2));
+
+
+
+    /*var price = document.getElementById("price").innerHTML;*/
+   /* var price = parseFloat($(objLi).attr("price"));
+    var coname = document.getElementById("coname").innerText;
+
+    alert("值："+coname +"---"+price);*/
+    $.get(
+        "shop/inNumber",
+        {
+            "uid":uid,
+            "coid":coid,
+            "number":number,
+        },
+        function (data) {
+            /*if("success"==data){
+                //跳转到
+                window.opener.location.href="exp/toAudit";
+                window.close();//关闭小窗口
+            }else{
+                alert("失败!")
+            }*/
+        }
+    )
+
+    /*$.get(
+        "shop/selOrder",
+        {
+            "uid":uid,
+            "coid":coid,
+            "number":number,
+        },
+        function (data) {
+
+            alert("是否运行到这里:"+data);
+            if(data != null){
+
+                //跳转到
+                window.opener.location.href="exp/toAudit";
+                window.close();//关闭小窗口
+            }else{
+                //跳转到
+                alert("是否运行到这里2");
+                window.opener.location.href="shop/inNumber";
+            }
+        }
+    )*/
 }
 //shop：关闭产品详情
 function CloseDetail(obj) {
