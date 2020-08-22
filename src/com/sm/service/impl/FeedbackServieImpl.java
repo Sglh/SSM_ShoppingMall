@@ -26,4 +26,9 @@ public class FeedbackServieImpl implements FeedbackServie {
     public int FeedAdd(Feedback feedback) {
         return feedbackMapper.FeedAdd(feedback);
     }
+
+    @Override
+    public int addAddress(int uid, String addres) {
+        return feedbackMapper.addAddress(uid,addres);
+    }
 }

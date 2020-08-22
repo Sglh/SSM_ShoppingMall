@@ -9,4 +9,5 @@ import java.util.List;
 public interface FeedbackServie {
     public List<Address> selAddressAll(int uid);
     public int FeedAdd(Feedback feedback);
+    public int addAddress(int uid,String addres);
 }

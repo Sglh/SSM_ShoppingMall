@@ -52,7 +52,21 @@ public class AddressController {
         }else {
             return "反馈失败！";
         }
-
     }
 
+    @RequestMapping("/addAddress")
+    public String addAddress(String addres,HttpSession session) {
+        System.out.println("address:"+addres);
+        U_user u_user = (U_user)session.getAttribute("u_user");
+        int uid = u_user.getUid();
+        int i = feedbackServie.addAddress(uid, addres);
+        if(i != 0) {
+            System.out.println("地址新增成功");
+            return "address";
+        }else {
+            System.out.println("地址新增失败");
+            return "address";
+        }
+
+    }
 }

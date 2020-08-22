@@ -25,4 +25,12 @@
     <select id="allOrder" resultMap="m">
         select * from orders where uid = #{param1} and state=0
     </select>
+
+    <select id="findByPhone" resultType="com.sm.pojo.U_user">
+        select * from u_user where phone=#{param1};
+    </select>
+
+    <insert id="register">
+        insert into u_user value(null,#{param1},#{param2},#{param3},0,0,#{param4});
+    </insert>
 </mapper>

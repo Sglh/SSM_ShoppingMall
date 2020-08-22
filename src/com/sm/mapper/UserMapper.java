@@ -15,4 +15,6 @@ public interface UserMapper {
 
     @Update("update u_user set balance=balance+#{param2} where uid =#{param1}")
     public int BalanceAdd(int uid,double balance);
+    public U_user findByPhone(String phone);
+    public int register(String uname, String pwd, String realname, String phone);
 }

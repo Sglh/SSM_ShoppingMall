@@ -4,6 +4,7 @@ import com.sm.pojo.Orders;
 import com.sm.pojo.U_user;
 import com.sm.service.CartService;
 import com.sm.service.UserService;
+import com.sm.util.SmsSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,7 @@ public class UserController {
     private CartService cartService;
     @RequestMapping(value = "/loginUser/{uname},{pwd}")
     public String loginUser(@PathVariable String uname, @PathVariable String pwd, HttpSession session, Model m) {
+        System.out.println("进入了loginUser");
         //System.out.println(uname+"---------"+pwd);
         U_user u_user = userService.loginUser(uname,pwd);
         String s = cartService.Allnub(u_user.getUid());
@@ -79,7 +81,67 @@ public class UserController {
         }else {
             return "0";
         }
-
     }
 
+
+    /**
+     * 发送短信
+     */
+    String smsnum;
+    U_user u_user;
+    @RequestMapping("/smsSend")
+    @ResponseBody
+    public String smsSend(String phone) {
+        System.out.println("进入了smsSend");
+        //登录逻辑1,根据phone查询数据中是否有
+        u_user = userService.findByPhone(phone);
+        if(u_user == null){
+            System.out.println("u_user没有查到数据");
+            return "0";
+        }else {
+            //有,发送短信,获取的六位数码
+            System.out.println("u_use查到数据");
+            SmsSender ss = new SmsSender();
+            smsnum = ss.sendCode(phone);
+            System.out.println("短信码:" + smsnum);//ajax发送的请求不能用请求转发或重定向响应
+            return "1"; //发送成功返回1
+        }
+    }
+
+    /**
+     * 短信登录判断
+     */
+    @RequestMapping("/smsLogin")
+    public String smsLogin(HttpSession session,String code,Model m) {
+        System.out.println("进入了smsLogin");
+        //数据库中有,再校验code
+        if(code.equals(smsnum)){
+            session.setAttribute("u_user",u_user);
+            //跳转页面到main,重定向
+            return "redirect:/index";
+        }else{
+            //短信校验失败
+            m.addAttribute("msg","验证码不正确!");
+            return "slogin";
+        }
+    }
+
+
+    /**
+     * 注册
+     * @return
+     */
+    @RequestMapping("/rLogin")
+    public String rLogin(String uname,String pwd,String u_name,String phone,Model m) {
+        int i = userService.register(uname, pwd, u_name, phone);
+        if(i != 0) {
+            System.out.println("注册成功");
+            return "login";
+        }else {
+            System.out.println("注册失败");
+            m.addAttribute("msgs","注册失败");
+            return "regLogin";
+        }
+
+    }
 }

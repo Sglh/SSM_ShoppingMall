@@ -30,4 +30,15 @@ public class UserServiceImpl implements UserService {
     public int BalanceAdd(int uid, double balance) {
         return userMapper.BalanceAdd(uid,balance);
     }
+
+    @Override
+    public U_user findByPhone(String phone) {
+        return userMapper.findByPhone(phone);
+    }
+
+    @Override
+    public int register(String uname, String pwd, String realname, String phone) {
+        System.out.println(uname+pwd+realname+phone);
+        return userMapper.register(uname,pwd,realname,phone);
+    }
 }

@@ -67,7 +67,7 @@
     <div class="location_index ng-scope">
         <div class="addr">
             <a href="address.html">
-                <p class="ng-binding">蓝坤大厦 ></p>
+                <p class="ng-binding">添加地址 ></p>
             </a>
         </div>
         <ul class="index_menu">

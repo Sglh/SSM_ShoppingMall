@@ -12,4 +12,6 @@ public interface UserService {
     public List<Orders> allOrder(int uid);
 
     public int BalanceAdd(int uid,double balance);
+    public U_user findByPhone(String phone);
+    public int register(String uname,String pwd,String realname,String phone);
 }

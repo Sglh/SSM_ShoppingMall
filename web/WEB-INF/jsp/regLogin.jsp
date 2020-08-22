@@ -1,4 +1,3 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
@@ -10,7 +9,7 @@
 <head>
     <base href="<%=basePath%>">
     <meta charset="utf-8"/>
-    <title>登录</title>
+    <title>注册</title>
     <meta name="author" content="DeathGhost" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <style>
@@ -41,28 +40,26 @@
 <body>
 <dl class="admin_login">
     <dt>
-        <strong>超市</strong>
+        <strong>注册</strong>
         <em>Management System</em>
     </dt>
-    <form action="user/loginUser" method="post">
+    <form action="user/rLogin" method="post">
         <dd class="user_icon">
-            <input type="text" placeholder="账号" value="lqd" class="login_txtbx" name="uname" id="user_id"/>
+            <input type="text" placeholder="账号" class="login_txtbx" name="uname" id="user_id"/>
         </dd>
         <dd class="pwd_icon">
-            <input type="password" value="123456" class="login_txtbx" name="pwd" id="user_pwd"/>
+            <input type="text" placeholder="密码" class="login_txtbx" name="pwd" id="user_pwd"/>
+        </dd>
+        <dd class="pwd_icon">
+            <input type="text" class="login_txtbx" name="u_name" id="realname" placeholder="真实姓名"/>
+        </dd>
+        <dd class="pwd_icon">
+            <input type="text" class="login_txtbx" name="phone" id="phone" placeholder="电话号码"/>
         </dd>
         <dd>
-            <input type="submit" value="立即登录" class="submit_btn" />
-        </dd>
-        <dd>
-            <a href="slogin" style="color: #1a1a1a">短信登录</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;
-            <a href="regLogin" style="color: #1a1a1a">注册</a>
+            <input type="submit" value="立即注册" class="submit_btn"/>
         </dd>
     </form>
-
 </dl>
 </body>
 </html>
