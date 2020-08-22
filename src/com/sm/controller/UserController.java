@@ -2,6 +2,7 @@ package com.sm.controller;
 
 import com.sm.pojo.Orders;
 import com.sm.pojo.U_user;
+import com.sm.service.CartService;
 import com.sm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,11 +20,22 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
+    @Autowired
+    private CartService cartService;
     @RequestMapping(value = "/loginUser/{uname},{pwd}")
     public String loginUser(@PathVariable String uname, @PathVariable String pwd, HttpSession session, Model m) {
         //System.out.println(uname+"---------"+pwd);
         U_user u_user = userService.loginUser(uname,pwd);
+        String s = cartService.Allnub(u_user.getUid());
+        String d=cartService.numPrice(u_user.getUid());
+        if(s==null||"".equals(s)){
+            s="0";
+        }
+        if(d==null||"".equals(d)){
+            d="0";
+        }
+        session.setAttribute("nums",d);
+        session.setAttribute("num",s);
         //System.out.println(u_user);
         if(u_user != null) {
             //把登录的用户放入session

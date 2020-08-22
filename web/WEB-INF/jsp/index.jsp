@@ -103,11 +103,11 @@
             </a>
         </li>
         <li>
-            <a href="cart.html">
+            <a href="car/Cart">
                 <img src="img/foot02.png" alt="">
                 <p>购物车</p>
             </a>
-            <i id="cartnum" class="ng-binding cartnum">0</i>
+            <i id="cartnum" class="ng-binding cartnum">${num}</i>
         </li>
         <li>
             <a href="member.html">

@@ -8,6 +8,6 @@
         <association property="consumption" javaType="com.sm.pojo.Consumption" select="com.sm.mapper.ConsumMapper.AllCon" column="oid"></association>
     </resultMap>
     <select id="AllOrd" resultMap="ms">
-        select * from orders where uid=#{param1} and state=1
+        select * from orders where uid=#{param1} and state=0
     </select>
 </mapper>

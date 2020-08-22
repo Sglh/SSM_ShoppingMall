@@ -696,12 +696,12 @@
 </div>
 <!--底部结算导航-->
 <div class="cart ng-scope">
-    <div class="r"><a href="cart.html">去结算</a></div>
+    <div class="r"><a href="car/Cart">去结算</a></div>
     <div class="l ng-binding">
-        ￥<label id="totalmoney">0</label>
+        ￥<label id="totalmoney">${nums}</label>
     </div>
-    <i id="totalcartnumber" class="ng-binding cartnum">0</i>
-    <a href="cart.html"><img src="img/shop_cart01.png" alt="..."></a>
+    <i id="totalcartnumber" class="ng-binding cartnum">${num}</i>
+    <a href="car/Cart"><img src="img/shop_cart01.png" alt="..."></a>
 </div>
 <!--/底部结算导航-->
 </body>

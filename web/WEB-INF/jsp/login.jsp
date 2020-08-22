@@ -43,7 +43,7 @@
         <strong>站点后台管理系统</strong>
         <em>Management System</em>
     </dt>
-    <from action="user/loginUser" method="post">
+
         <dd class="user_icon">
             <input type="text" placeholder="账号" value="lqd" class="login_txtbx" name="uname" id="user_id"/>
         </dd>
@@ -60,7 +60,7 @@
         <dd>
             <input type="submit" value="立即登录" class="submit_btn"/>
         </dd>
-    </from>
+
     <dd>
         <p>© 2015-2016 DeathGhost 版权所有</p>
         <p>陕B2-20080224-1</p>

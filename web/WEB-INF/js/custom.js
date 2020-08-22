@@ -170,9 +170,25 @@ function CountNumPrice() {
         // var coname = $(objLi).find(".t").text();
         uid = parseInt($(objLi).find(".uid").text());
         coid = parseInt($(objLi).find(".coid").text());
-
         totalcartnumber = totalcartnumber + number;
         totalmoney = totalmoney + (number * price);
+        $.get(
+            "shop/inNumber",
+            {
+                "uid":uid,
+                "coid":coid,
+                "number":number,
+            },
+            function (data) {
+                /*if("success"==data){
+                    //跳转到
+                    window.opener.location.href="exp/toAudit";
+                    window.close();//关闭小窗口
+                }else{
+                    alert("失败!")
+                }*/
+            }
+        )
     });
     $("#totalcartnumber").text(totalcartnumber);
     $("#totalmoney").text(totalmoney.toFixed(2));
@@ -184,23 +200,7 @@ function CountNumPrice() {
     var coname = document.getElementById("coname").innerText;
 
     alert("值："+coname +"---"+price);*/
-    $.get(
-        "shop/inNumber",
-        {
-            "uid":uid,
-            "coid":coid,
-            "number":number,
-        },
-        function (data) {
-            /*if("success"==data){
-                //跳转到
-                window.opener.location.href="exp/toAudit";
-                window.close();//关闭小窗口
-            }else{
-                alert("失败!")
-            }*/
-        }
-    )
+
 
     /*$.get(
         "shop/selOrder",
