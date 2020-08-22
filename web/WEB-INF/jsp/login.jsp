@@ -44,7 +44,7 @@
         <strong>超市</strong>
         <em>Management System</em>
     </dt>
-    <form action="user/loginUser" method="post">
+
         <dd class="user_icon">
             <input type="text" placeholder="账号" value="lqd" class="login_txtbx" name="uname" id="user_id"/>
         </dd>
@@ -61,7 +61,7 @@
             &nbsp;&nbsp;&nbsp;
             <a href="regLogin" style="color: #1a1a1a">注册</a>
         </dd>
-    </form>
+
 
 </dl>
 </body>

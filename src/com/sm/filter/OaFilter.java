@@ -19,7 +19,11 @@ public class OaFilter implements Filter {
         boolean b4 = uri.startsWith("/SSM_ShoppingMall_war_exploded/images/");
         boolean b5=uri.startsWith("/SSM_ShoppingMall_war_exploded/css/");
         boolean b6=uri.startsWith("/SSM_ShoppingMall_war_exploded/user/loginUser/");
-        if(b1 || b2 || b3 || b4 || b5 || b6){
+        boolean b7 = uri.equals("/SSM_ShoppingMall_war_exploded/slogin");
+        boolean b8 = uri.equals("/SSM_ShoppingMall_war_exploded/regLogin");
+        boolean b9 = uri.equals("/SSM_ShoppingMall_war_exploded/user/rLogin");
+        boolean b10 = uri.equals("/SSM_ShoppingMall_war_exploded/user/smsLogin");
+        if(b1 || b2 || b3 || b4 || b5 || b6 || b7||b8||b9||b10){
             filterChain.doFilter(servletRequest,servletResponse);
         }else{
             U_user u_user = (U_user) req.getSession().getAttribute("u_user");
