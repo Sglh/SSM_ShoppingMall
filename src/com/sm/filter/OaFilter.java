@@ -18,7 +18,7 @@ public class OaFilter implements Filter {
         boolean b3 = uri.startsWith("/SSM_ShoppingMall_war_exploded/js/");
         boolean b4 = uri.startsWith("/SSM_ShoppingMall_war_exploded/images/");
         boolean b5=uri.startsWith("/SSM_ShoppingMall_war_exploded/css/");
-        boolean b6=uri.startsWith("/SSM_ShoppingMall_war_exploded/user/loginUser/");
+        boolean b6=uri.startsWith("/SSM_ShoppingMall_war_exploded/user/loginUser");
         boolean b7 = uri.equals("/SSM_ShoppingMall_war_exploded/slogin");
         boolean b8 = uri.equals("/SSM_ShoppingMall_war_exploded/regLogin");
         boolean b9 = uri.equals("/SSM_ShoppingMall_war_exploded/user/rLogin");

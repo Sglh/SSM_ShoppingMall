@@ -30,11 +30,11 @@
             //验证码
             createCode();
             //测试提交，对接程序删除即可
-            $(".submit_btn").click(function(){
+            /*$(".submit_btn").click(function(){
                 var uname =document.getElementById('user_id').value;
                 var pwd =document.getElementById('user_pwd').value;
                 location.href="user/loginUser/"+uname+","+pwd;
-            });
+            });*/
         });
     </script>
 </head>
@@ -45,6 +45,7 @@
         <em>Management System</em>
     </dt>
 
+    <form action="user/loginUser" method="post">
         <dd class="user_icon">
             <input type="text" placeholder="账号" value="lqd" class="login_txtbx" name="uname" id="user_id"/>
         </dd>
@@ -54,6 +55,7 @@
         <dd>
             <input type="submit" value="立即登录" class="submit_btn" />
         </dd>
+    </form>
         <dd>
             <a href="slogin" style="color: #1a1a1a">短信登录</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

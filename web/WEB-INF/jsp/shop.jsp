@@ -698,7 +698,7 @@
 <div class="cart ng-scope">
     <div class="r"><a href="car/Cart">去结算</a></div>
     <div class="l ng-binding">
-        ￥<label id="totalmoney">${nums}</label>
+        ￥<label id="totalmoney" class="nnn">${nums}</label>
     </div>
     <i id="totalcartnumber" class="ng-binding cartnum">${num}</i>
     <a href="car/Cart"><img src="img/shop_cart01.png" alt="..."></a>

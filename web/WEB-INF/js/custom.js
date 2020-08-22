@@ -162,8 +162,11 @@ function CountNumPrice() {
     var uid = 0;  //用户id
     var coid = 0;  //商品id
     var number = 0;  //商品数量
+
     $(".lists .on").each(function (i, model) {
         var objLi = $(this);
+       /* totalcartnumber = parseInt($(objLi).find(".ng-binding cartnum").text());
+        totalmoney = parseFloat($(objLi).attr("nnn"));*/
         number = parseInt($(objLi).find(".number").text());
         var price = parseFloat($(objLi).attr("price"));
         // var coname = $(objLi).find(".t").text();

@@ -23,8 +23,8 @@ public class UserController {
     private UserService userService;
     @Autowired
     private CartService cartService;
-    @RequestMapping(value = "/loginUser/{uname},{pwd}")
-    public String loginUser(@PathVariable String uname, @PathVariable String pwd, HttpSession session, Model m) {
+    @RequestMapping("/loginUser")
+    public String loginUser(String uname, String pwd, HttpSession session, Model m) {
         System.out.println("进入了loginUser");
         //System.out.println(uname+"---------"+pwd);
         U_user u_user = userService.loginUser(uname,pwd);

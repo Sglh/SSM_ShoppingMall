@@ -45,6 +45,7 @@ public class ShopController  {
         Orders orders = allCommodityService.selOrder(Integer.parseInt(uid), Integer.parseInt(coid), Integer.parseInt(number));
         if(orders != null) {
             //存在同名未购买商品
+            System.out.println("存在同名未购买商品"+orders);
             int i = allCommodityService.upOrder(Integer.parseInt(uid), Integer.parseInt(coid), Integer.parseInt(number));
         }else {
             //
@@ -76,4 +77,5 @@ public class ShopController  {
         }
         return i;
     }
+
 }
