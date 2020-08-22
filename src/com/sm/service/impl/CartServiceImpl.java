@@ -45,8 +45,8 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public int XiaoFei(double num, int uid) {
-        return cartMapper.XiaoFei(num,uid);
+    public int XiaoFei(double num,double num1, int uid) {
+        return cartMapper.XiaoFei(num,num1,uid);
     }
 
     @Override

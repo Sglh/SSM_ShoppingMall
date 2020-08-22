@@ -29,8 +29,8 @@ public interface CartMapper {
     @Select("SELECT * FROM address WHERE addresss=#{param1}")
     public Address tetAid(String addresss);
     //修改用户的余额以及累计消费
-    @Update("update u_user set balance = balance-#{param2},ubalance=ubalance+#{param2} where uid = #{param1}")
-    public int XiaoFei(double num,int uid);
+    @Update("update u_user set balance =#{param1},ubalance=#{param2} where uid = #{param3}")
+    public int XiaoFei(double num,double num1,int uid);
     //修改订单状态
     @Update("UPDATE orders SET state = 0,remarks=#{param3},aid=#{param2} WHERE uid =#{param1} AND state=1")
     public int Dingdan(int uid,int aid,String remarks);

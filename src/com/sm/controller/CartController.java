@@ -48,7 +48,7 @@ public class CartController {
         if(add.trim().equals("请选择")){
             return "0";
         }
-        session.setAttribute("addres", add);
+        session.setAttribute("addre", add);
         return "1";
     }
     @RequestMapping(value = "/zhifu", produces = "text/html;charset=utf-8")
@@ -71,10 +71,13 @@ public class CartController {
         System.out.println(i+"--------------"+ord.size());
         Address address=cartService.tetAid(add);
         System.out.println(address.getAid());
-        int x=cartService.XiaoFei(b,user.getUid());
+        System.out.println(b+"-----"+user.getUid());
+        System.out.println(user.getBalance()-b);
+        System.out.println(user.getUbalance()+b);
+        int x=cartService.XiaoFei(user.getBalance()-b,user.getUbalance()+b,user.getUid());
         System.out.println(x);
         if(x==1){
-            user.setBalance(user.getUbalance()-b);
+            user.setBalance(user.getBalance()-b);
             user.setUbalance(user.getUbalance()+b);
             session.setAttribute("u_user",user);
         }

@@ -12,7 +12,7 @@ public class OaFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest)servletRequest;
         String uri = req.getRequestURI();
-        System.out.println(uri);
+        //System.out.println(uri);
         boolean b1 = uri.equals("/SSM_ShoppingMall_war_exploded/");
         boolean b2 = uri.equals("/SSM_ShoppingMall_war_exploded/user");
         boolean b3 = uri.startsWith("/SSM_ShoppingMall_war_exploded/js/");

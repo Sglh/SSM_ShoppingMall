@@ -14,6 +14,6 @@ public interface CartService {
     public String numPrice(int uid);
     public int mingXi(int uid,int oid);
     public Address tetAid(String addresss);
-    public int XiaoFei(double num,int uid);
+    public int XiaoFei(double num,double num1,int uid);
     public int Dingdan(int uid,int aid,String remarks);
 }

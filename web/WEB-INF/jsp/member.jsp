@@ -51,8 +51,8 @@
 <div class="ng-scope">
     <div class="header ng-scope">
         <img src="img/tou.png" class="img">
-        <p class="mobile ng-binding">15625632565</p>
-        <p class="nickname ng-binding">阿拉伯联合酋长国-村长</p>
+        <p class="mobile ng-binding">${u_user.uname}</p>
+        <p class="nickname ng-binding">${u_user.phone}</p>
     </div>
     <div style="clear:both;background:#E0E0E0;height:5px;" class="ng-scope"></div>
     <ul class="headerlist ng-scope">
